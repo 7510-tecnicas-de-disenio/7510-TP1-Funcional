@@ -1,6 +1,6 @@
-(ns number-database-test
+(ns rules-engine.logical-interpreter-tests.number-database-test
   (:require [clojure.test :refer :all]
-            [logical-interpreter :refer :all]))
+            [rules-engine.logical-interpreter :refer :all]))
 
 (def number-database "
 	add(zero, zero, zero).
@@ -22,7 +22,7 @@
   (testing "add(two, one, one) should be false"
     (is (= (evaluate-query number-database "add(two, one, one)")
            false))))
-           
+
 (deftest number-database-rule-test
   (testing "subtract(one, one, two) should be false"
     (is (= (evaluate-query number-database "subtract(one, one, two)")
